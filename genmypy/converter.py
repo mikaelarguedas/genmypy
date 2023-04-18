@@ -199,7 +199,7 @@ def convert_message_class(first_party_package, spec, imports):
 
 def convert_service_class(spec, request_class, response_class):
     # type: (SrvSpec, ClassElement, ClassElement) -> ClassElement
-    srvclass = ClassElement(spec.short_name, "object")
+    srvclass = ClassElement(spec.short_name)
     srvclass.add(FieldElement("_type", "str"))
     srvclass.add(FieldElement("_md5sum", "str"))
     srvclass.add(AliasElement("_request_class", request_class.name))

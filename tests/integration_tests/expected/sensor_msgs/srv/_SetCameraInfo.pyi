@@ -52,7 +52,7 @@ class SetCameraInfoResponse(genpy.Message):
     def serialize_numpy(self, buff: typing.BinaryIO, numpy: types.ModuleType) -> None: ...
     def deserialize_numpy(self, str: bytes, numpy: types.ModuleType) -> SetCameraInfoResponse: ...
 
-class SetCameraInfo(object):
+class SetCameraInfo:
     _type: str
     _md5sum: str
     _request_class = SetCameraInfoRequest
