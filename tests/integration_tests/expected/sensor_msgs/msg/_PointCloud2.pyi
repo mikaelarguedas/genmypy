@@ -10,14 +10,14 @@ class PointCloud2(genpy.Message):
     _type: str
     _has_header: bool
     _full_text: str
-    __slots__: typing.List[str]
-    _slot_types: typing.List[str]
+    __slots__: list[str]
+    _slot_types: list[str]
 
     # Fields
     header: std_msgs.msg.Header
     height: int
     width: int
-    fields: typing.List[sensor_msgs.msg.PointField]
+    fields: list[sensor_msgs.msg.PointField]
     is_bigendian: bool
     point_step: int
     row_step: int
@@ -29,7 +29,7 @@ class PointCloud2(genpy.Message):
         header: std_msgs.msg.Header = ...,
         height: int = ...,
         width: int = ...,
-        fields: typing.List[sensor_msgs.msg.PointField] = ...,
+        fields: list[sensor_msgs.msg.PointField] = ...,
         is_bigendian: bool = ...,
         point_step: int = ...,
         row_step: int = ...,
@@ -38,7 +38,7 @@ class PointCloud2(genpy.Message):
         *args: typing.Any,
         **kwds: typing.Any,
     ) -> None: ...
-    def _get_types(self) -> typing.List[str]: ...
+    def _get_types(self) -> list[str]: ...
     def serialize(self, buff: typing.BinaryIO) -> None: ...
     def deserialize(self, str: bytes) -> PointCloud2: ...
     def serialize_numpy(self, buff: typing.BinaryIO, numpy: types.ModuleType) -> None: ...

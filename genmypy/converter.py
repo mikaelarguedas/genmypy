@@ -70,7 +70,7 @@ def _get_genmsg_type(first_party_package, field_type, imports):
             return "bytes"
 
         base_type = _get_genmsg_type(first_party_package, base_field_type, imports)
-        return "typing.List[{}]".format(base_type)
+        return "list[{}]".format(base_type)
 
     special = _GENPY_DEFINED.get(field_type)
     if special is not None:
@@ -127,8 +127,8 @@ def convert_message_class(first_party_package, spec, imports):
     msgclass.add(FieldElement("_type", "str"))
     msgclass.add(FieldElement("_has_header", "bool"))
     msgclass.add(FieldElement("_full_text", "str"))
-    msgclass.add(FieldElement("__slots__", "typing.List[str]"))
-    msgclass.add(FieldElement("_slot_types", "typing.List[str]"))
+    msgclass.add(FieldElement("__slots__", "list[str]"))
+    msgclass.add(FieldElement("_slot_types", "list[str]"))
 
     message_constants = _convert_message_constants(first_party_package, spec, imports)
     if len(message_constants) > 0:
@@ -160,7 +160,7 @@ def convert_message_class(first_party_package, spec, imports):
     msgclass.add(init_method)
 
     # Add private methods except pattern methods like `_get_struct_I`
-    msgclass.add(ClassMethodElement("_get_types", "typing.List[str]"))
+    msgclass.add(ClassMethodElement("_get_types", "list[str]"))
 
     # Add public methods
     msgclass.add(
